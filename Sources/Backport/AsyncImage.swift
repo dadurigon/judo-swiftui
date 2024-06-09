@@ -124,7 +124,7 @@ public extension Backport where Wrapped == Any {
                 guard let url = url else {
                     throw NSError(domain: "judo.app", code: 0)
                 }
-                let (data, _) = try await CustomURLSession.shared.data(from: url)
+                let (data, _) = try await URLSession.shared.data(from: url)
                 guard !Task.isCancelled else { return }
 
 #if os(macOS)
