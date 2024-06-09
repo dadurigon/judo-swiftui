@@ -14,6 +14,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SwiftUI
+import JudoDocument
 
 @available(iOS, deprecated: 15.0)
 @available(macOS, deprecated: 12.0)
@@ -124,7 +125,7 @@ public extension Backport where Wrapped == Any {
                 guard let url = url else {
                     throw NSError(domain: "judo.app", code: 0)
                 }
-                let (data, _) = try await URLSession.shared.data(from: url)
+                let (data, _) = try await CustomURLSession.shared.data(from: url)
                 guard !Task.isCancelled else { return }
 
 #if os(macOS)

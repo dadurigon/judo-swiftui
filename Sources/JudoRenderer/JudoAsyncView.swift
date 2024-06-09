@@ -120,7 +120,7 @@ public struct JudoAsyncView<Content>: View where Content: View {
     private func download(url: URL) {
         let request = URLRequest(url: url)
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = CustomURLSession.shared.dataTask(with: request) { data, response, error in
             if let error {
                 let response = response as! HTTPURLResponse
                 let judoError = JudoError.downloadFailed(statusCode: response.statusCode, underlyingError: error)
