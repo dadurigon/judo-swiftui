@@ -73,7 +73,7 @@ struct DataSourceView: SwiftUI.View {
 
         do {
             let request = try dataSource.urlRequest(data: data, propertyValues: componentBindings.propertyValues)
-            return URLSession.shared.dataPublisher(for: request)
+            return CustomURLSession.shared.dataPublisher(for: request)
         } catch {
             return Just(Result.failure(UnableToInterpolateDataSourceURLError())).eraseToAnyPublisher()
         }
