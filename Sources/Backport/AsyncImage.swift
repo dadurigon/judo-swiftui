@@ -14,7 +14,6 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import SwiftUI
-import JudoDocument
 
 @available(iOS, deprecated: 15.0)
 @available(macOS, deprecated: 12.0)
